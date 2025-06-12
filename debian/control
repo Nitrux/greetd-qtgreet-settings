@@ -1,0 +1,14 @@
+Source: greetd-qtgreet-settings
+Section: misc
+Priority: optional
+Maintainer: Uri Herrera <uri_herrera@nxos.org>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: http://nx-desktop.org
+
+
+Package: greetd-qtgreet-settings
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Defaults settings for QtGreet.
+
