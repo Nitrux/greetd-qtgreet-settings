@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2021 The Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="Starts the greetd display manager"
+command="/usr/sbin/greetd"
+pidfile="/run/greetd.pid"
+
+# Using supervise-daemon makes the service very robust.
+supervisor=supervise-daemon
+
+depend() {
+	# This service provides the 'xdm' virtual dependency for other services.
+	provide xdm
+	# It needs a login manager and D-Bus.
+	need elogind dbus
+	# Should start after the basic system is up.
+	after localmount
+	# Tells Plymouth to quit before the display manager starts.
+	use plymouth
+}
+
+start_pre() {
+	# greetd requires a runtime directory with specific permissions.
+	checkpath -d -m 0755 -o greeter:greeter /run/greetd
+	
+	# Stop the boot splash screen if it's running.
+	if command -v plymouth >/dev/null 2>&1 && plymouth --ping; then
+		plymouth quit
+	fi
+}

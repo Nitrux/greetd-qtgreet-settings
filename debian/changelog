@@ -1,3 +1,9 @@
+greetd-qtgreet-settings (0.0.2)  nitrux; urgency=medium
+
+  * Update maintainer scripts.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 18 Jul 2025 19:03:00 -0500
+
 greetd-qtgreet-settings (0.0.1)  nitrux; urgency=medium
 
   * Create package.

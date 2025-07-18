@@ -1,3 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-exit 0
+CONFIG_FILE="/etc/greetd/config.toml"
+
+# Replace the [terminal] command
+sed -i 's|^\([[:space:]]*command = \).*qtgreet.*|\1"qtgreet --cmd ''{{ command }}''"|' "$CONFIG_FILE"
+
+# Replace the [default_session] command
+sed -i 's|^\([[:space:]]*command = \).*dbus-run-session.*|\1"dbus-run-session -- /usr/bin/startplasma-wayland"|' "$CONFIG_FILE"
