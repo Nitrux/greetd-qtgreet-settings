@@ -11,7 +11,7 @@ supervisor=supervise-daemon
 
 depend() {
 	# This service provides the 'xdm' virtual dependency for other services.
-	provide xdm
+	provide greetd
 	# It needs a login manager and D-Bus.
 	need elogind dbus
 	# Should start after the basic system is up.
