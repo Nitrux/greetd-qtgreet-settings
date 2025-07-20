@@ -2,27 +2,24 @@
 
 description="Starts the greetd display manager"
 command="/usr/sbin/greetd"
-pidfile="/run/greetd.pid"
-
-# Using supervise-daemon makes the service very robust.
 supervisor=supervise-daemon
 
 depend() {
-	# This service provides the 'xdm' virtual dependency for other services.
 	provide greetd
-	# It needs a login manager and D-Bus.
 	need elogind dbus
-	# Should start after the basic system is up.
 	after localmount
-	# Tells Plymouth to quit before the display manager starts.
 	use plymouth
 }
 
 start_pre() {
-	# greetd requires a runtime directory with specific permissions.
+	
+	if ! getent passwd greeter >/dev/null; then
+		eerror "User 'greeter' does not exist. Please create it first."
+		return 1
+	fi
+
 	checkpath -d -m 0755 -o greeter:greeter /run/greetd
 	
-	# Stop the boot splash screen if it's running.
 	if command -v plymouth >/dev/null 2>&1 && plymouth --ping; then
 		plymouth quit
 	fi
