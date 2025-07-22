@@ -13,12 +13,12 @@ depend() {
 
 start_pre() {
 	
-	if ! getent passwd greeter >/dev/null; then
-		eerror "User 'greeter' does not exist. Please create it first."
+	if ! getent passwd greetd >/dev/null; then
+		eerror "User 'greetd' does not exist. Please create it first."
 		return 1
 	fi
 
-	checkpath -d -m 0755 -o greeter:greeter /run/greetd
+	checkpath -d -m 0755 -o greetd:greetd /run/greetd
 	
 	if command -v plymouth >/dev/null 2>&1 && plymouth --ping; then
 		plymouth quit
