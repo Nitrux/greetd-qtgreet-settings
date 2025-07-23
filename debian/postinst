@@ -8,4 +8,3 @@ if [ ! -f "$CONFIG_FILE" ]; then
 fi
 
 sed -i '/^\[default_session\]/,/^\[/ s|^\( *command = \).*|\1"Hyprland --config /etc/greetd/hyprland.conf"|' "$CONFIG_FILE"
-
