@@ -1,6 +1,12 @@
 greetd-qtgreet-settings (0.0.8)  nitrux; urgency=medium
 
-  * Fix user check.
+  * Add wrapper to use for default session.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 22 Jul 2025 17:04:00 -0500
+
+greetd-qtgreet-settings (0.0.8)  nitrux; urgency=medium
+
+  * Fix user check in service.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Tue, 22 Jul 2025 17:04:00 -0500
 
