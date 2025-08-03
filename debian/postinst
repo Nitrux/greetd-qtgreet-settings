@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-exit 0
+CONFIG_FILE="/etc/greetd/config.toml"
+
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "$CONFIG_FILE not found."
+    exit 1
+fi
+
+sed -i '/^\[default_session\]/,/^\[/ s|^\( *command = \).*|\1"greetd-hyprland --config /etc/greetd/hyprland.conf"|' "$CONFIG_FILE"
