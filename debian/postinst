@@ -64,4 +64,4 @@ if [ ! -f "$CONFIG_FILE" ]; then
     exit 1
 fi
 
-sed -i '/^\[default_session\]/,/^\[/ s|^\( *command = \).*|\1"greetd-hyprland --config /etc/greetd/hyprland.conf"|' "$CONFIG_FILE"
+sed -i '/^\[default_session\]/,/^\[/ s|^\( *command = \).*|\1"greetd-hyprland --config /etc/greetd/hyprland.conf"\n|' "$CONFIG_FILE"
