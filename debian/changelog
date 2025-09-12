@@ -1,3 +1,9 @@
+greetd-qtgreet-settings (0.1.2)  nitrux; urgency=medium
+
+  * Use the same configuration for the Hyprland instance launching the greeter.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 11 Sep 2025 23:14:00 -0500
+
 greetd-qtgreet-settings (0.1.1)  nitrux; urgency=medium
 
   * Use the same configuration for the Hyprland instance launching the greeter.
