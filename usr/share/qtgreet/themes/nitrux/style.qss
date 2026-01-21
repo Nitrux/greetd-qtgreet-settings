@@ -1,103 +1,135 @@
-/* GLOBAL SETTINGS */
+/* * QtGreet Theme - "Nitrux Mocha Islands"
+ * Matches Waybar Style & Catppuccin Mocha Palette
+ * Note: box-shadow is not supported in QSS.
+ */
+
+/* --- GLOBAL SETTINGS --- */
 QWidget {
-    color: #cdd6f4; /* Text (Mocha) */
-    font-weight: bold; 
-    font-family: "Switzer"; /* Enforce font match */
+    color: #cdd6f4;
+    font-family: "Switzer", "Noto Color Emoji", "Symbols Nerd Font Mono", "Font Awesome Free 6 Solid", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
 }
 
-/* THE "PILL" MODULE LOOK 
-   Matches the dark containers in your Waybar 
-*/
-QPushButton, QToolButton, QLineEdit, 
-#UserLabel, #SessionLabel, #UserNavRight, #UserNavLeft, 
-#SessionNavRight, #SessionNavLeft, #BackButton, #LoginButton {
-    /* Base (Mocha #1e1e2e) at 85% opacity */
-    background-color: rgba(30, 30, 46, 0.85); 
-    /* Surface0 (Mocha #313244) border to match Waybar */
+/* --- CENTER WIDGETS --- */
+QPushButton, QLineEdit, 
+#UserLabel, #SessionLabel, 
+#UserNavRight, #UserNavLeft, #SessionNavRight, #SessionNavLeft, 
+#BackButton, #LoginButton {
+    background-color: rgba(30, 30, 46, 0.85);
     border: 1px solid #313244;
-    /* High border radius for the pill shape */
+    border-radius: 17px;    
+    min-height: 34px;
+}
+
+/* --- TOP BAR ISLANDS --- */
+#PowerButton, #Clock, #NumLock, #CapsLock {
+    background-color: rgba(30, 30, 46, 0.85);
+    border: 1px solid #313244;
     border-radius: 18px;
+    min-height: 36px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-/* HOVER STATES */
-QPushButton:hover, QToolButton:hover, #UserNavRight:hover, 
-#UserNavLeft:hover, #SessionNavRight:hover, #SessionNavLeft:hover {
-    /* Surface1 (Mocha #45475a) */
-    background-color: rgba(69, 71, 90, 0.9);
-    border: 1px solid #cba6f7; /* Mauve border on hover */
+/* --- CLOCK --- */
+#Clock {
+    color: #cdd6f4;
+    font-weight: 800;
 }
 
-/* PRESSED STATES */
-QPushButton:pressed, QToolButton:pressed {
-    background-color: #cba6f7; /* Mauve fill */
-    color: #1e1e2e; /* Base text */
-    padding-top: 1px;
-    padding-left: 1px;
-}
-
-/* FOCUS ACCENTS */
-QPushButton:focus, QToolButton:focus, QLineEdit:focus, #LoginButton:focus {
-    border: 2px solid #cba6f7; /* Mauve */
-}
-
-/* SPECIFIC WIDGET TWEAKS */
-
-/* Password Field */
-QLineEdit {
-    /* Mantle (Mocha #181825) */
-    background-color: rgba(24, 24, 37, 0.9); 
+/* --- POWER BUTTON --- */
+#PowerButton {
+    qproperty-toolButtonStyle: "ToolButtonTextOnly";
+    qproperty-text: "⚡";
+    qproperty-iconSize: 0px;
+    
+    color: #f38ba8;
+    border: 1px solid #f38ba8;
+    
+    font-size: 22px;
+    font-weight: bold;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-/* Login Button */
-#LoginButton {
-    /* Surface0 (Mocha #313244) */
-    background-color: rgba(49, 50, 68, 1.0);
+#PowerButton:hover {
+    background-color: #f38ba8;
+    color: #1e1e2e;
 }
 
-/* User & Session Labels */
+/* --- INDICATORS (Attempt to style) --- */
+/* Note: These may remain transparent due to C++ paintEvent limitations */
+#NumLock, #CapsLock {
+    color: #f9e2af;
+    border: 1px solid #f9e2af;
+}
+
+/* --- HOVER STATES --- */
+QPushButton:hover, 
+#UserNavRight:hover, #UserNavLeft:hover, 
+#SessionNavRight:hover, #SessionNavLeft:hover {
+    background-color: rgba(69, 71, 90, 0.9);
+    border: 1px solid #cba6f7;
+}
+
+/* --- PRESSED STATES --- */
+QPushButton:pressed {
+    background-color: #cba6f7;
+    color: #1e1e2e;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+/* --- FOCUS ACCENTS --- */
+QPushButton:focus, QLineEdit:focus, #LoginButton:focus {
+    border: 2px solid #cba6f7;
+}
+
+/* --- PASSWORD FIELD --- */
+QLineEdit {
+    background-color: rgba(24, 24, 37, 0.9);
+    padding-left: 10px;
+    padding-right: 10px;
+    selection-background-color: #cba6f7;
+    selection-color: #1e1e2e;
+}
+
+/* --- LOGIN BUTTON --- */
+#LoginButton {
+    qproperty-iconSize: 0px;
+    qproperty-text: "Login";
+    background-color: rgba(49, 50, 68, 1.0);
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* --- USER & SESSION LABELS --- */
 #UserLabel, #SessionLabel {
-    /* Base (Mocha) more transparent */
-    background-color: rgba(30, 30, 46, 0.6); 
+    background-color: rgba(30, 30, 46, 0.6);
     border: none; 
 }
 
-/* Nav Buttons (The arrows) */
+/* --- NAVIGATION ARROWS --- */
 #UserNavRight, #UserNavLeft, #SessionNavRight, #SessionNavLeft {
     background-color: transparent; 
     border: none;
 }
 
-/* Power & Reboot (Top bar) */
-QToolButton#Halt {
-    border-radius: 0px;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
-    /* Red (Mocha #f38ba8) */
-    background-color: rgba(243, 139, 168, 0.8); 
-}
-
-QToolButton#Reboot {
-    border-radius: 0px;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
-    /* Yellow (Mocha #f9e2af) */
-    background-color: rgba(249, 226, 175, 0.8); 
-}
-
-/* Popup/Overlay Styles */
-QWidget#widget {
-    background-color: rgba(30, 30, 46, 0.95); /* Base */
-    border: 2px solid #cba6f7; /* Mauve */
-    border-radius: 12px;
-}
-
-QWidget#OverLay {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
+/* --- USER AVATAR --- */
 QLabel#UserIcon {
-    border: 2px solid #cba6f7; /* Mauve */
-    border-radius: 36px; 
+    border: 2px solid #cba6f7;
+    border-radius: 36px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* --- POPUP/OVERLAY --- */
+QWidget#widget {
+    background-color: rgba(30, 30, 46, 0.95);
+    border: 2px solid #cba6f7;
+    border-radius: 12px;
 }

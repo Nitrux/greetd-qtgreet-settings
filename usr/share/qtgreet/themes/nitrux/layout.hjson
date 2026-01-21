@@ -20,9 +20,9 @@
 				Red: 0.0667
 				Green: 0.0667
 				Blue: 0.1059
-				Alpha: 1.0
+				Alpha: 0.0
 			}
-			Height: 36
+			Height: 48
 		}
 		R2: {
 			Alignment: MM
@@ -43,20 +43,20 @@
 		}
 		Clock: {
 			Type: 	Time
-			Font: Switzer, 16, Bold, Normal
+			Font: Switzer, 16, Normal, Normal
 			Format: hh:mm:ss
 			Width: 	100
 			Height: 36
 			Alignment: Center
 		},
 		NumLock: {
-			Font: Switzer, 16, Bold, Normal
+			Font: Switzer, 16, Normal, Normal
 			Width: 15
 			Height: 36
 			ToolTip: NumLock status
 		},
 		CapsLock: {
-			Font: Switzer, 16, Bold, Normal
+			Font: Switzer, 16, Normal, Normal
 			Width: 15
 			Height: 36
 			ToolTip: CapsLock status
