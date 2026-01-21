@@ -1,3 +1,9 @@
+greetd-qtgreet-settings (0.1.5)  nitrux; urgency=medium
+
+  * Add QtGreet settings to this package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 21 Jan 2026 06:35:00 -0500
+
 greetd-qtgreet-settings (0.1.4)  nitrux; urgency=medium
 
   * Disable Xwayland in Hyprland instance launching the greeter.
