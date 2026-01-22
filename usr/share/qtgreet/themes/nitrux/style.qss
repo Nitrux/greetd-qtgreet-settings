@@ -1,135 +1,135 @@
-/* * QtGreet Theme - "Nitrux Mocha Islands"
- * Matches Waybar Style & Catppuccin Mocha Palette
- * Note: box-shadow is not supported in QSS.
- */
-
-/* --- GLOBAL SETTINGS --- */
 QWidget {
-    color: #cdd6f4;
-    font-family: "Switzer", "Noto Color Emoji", "Symbols Nerd Font Mono", "Font Awesome Free 6 Solid", sans-serif;
-    font-weight: bold;
-    font-size: 13px;
+    color: #ffffff;
 }
 
-/* --- CENTER WIDGETS --- */
-QPushButton, QLineEdit, 
-#UserLabel, #SessionLabel, 
-#UserNavRight, #UserNavLeft, #SessionNavRight, #SessionNavLeft, 
-#BackButton, #LoginButton {
-    background-color: rgba(30, 30, 46, 0.85);
-    border: 1px solid #313244;
-    border-radius: 17px;    
-    min-height: 34px;
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 30);
+    border: 1px solid cornflowerblue;
 }
 
-/* --- TOP BAR ISLANDS --- */
-#PowerButton, #Clock, #NumLock, #CapsLock {
-    background-color: rgba(30, 30, 46, 0.85);
-    border: 1px solid #313244;
-    border-radius: 18px;
-    min-height: 36px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* --- CLOCK --- */
-#Clock {
-    color: #cdd6f4;
-    font-weight: 800;
-}
-
-/* --- POWER BUTTON --- */
-#PowerButton {
-    qproperty-toolButtonStyle: "ToolButtonTextOnly";
-    qproperty-text: "⚡";
-    qproperty-iconSize: 0px;
-    
-    color: #f38ba8;
-    border: 1px solid #f38ba8;
-    
-    font-size: 22px;
-    font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#PowerButton:hover {
-    background-color: #f38ba8;
-    color: #1e1e2e;
-}
-
-/* --- INDICATORS (Attempt to style) --- */
-/* Note: These may remain transparent due to C++ paintEvent limitations */
-#NumLock, #CapsLock {
-    color: #f9e2af;
-    border: 1px solid #f9e2af;
-}
-
-/* --- HOVER STATES --- */
-QPushButton:hover, 
-#UserNavRight:hover, #UserNavLeft:hover, 
-#SessionNavRight:hover, #SessionNavLeft:hover {
-    background-color: rgba(69, 71, 90, 0.9);
-    border: 1px solid #cba6f7;
-}
-
-/* --- PRESSED STATES --- */
 QPushButton:pressed {
-    background-color: #cba6f7;
-    color: #1e1e2e;
-    padding-top: 5px;
-    padding-left: 5px;
+    background-color: rgba(255, 255, 255, 10);
+    padding-top: 1px;
+    padding-left: 1px;
 }
 
-/* --- FOCUS ACCENTS --- */
-QPushButton:focus, QLineEdit:focus, #LoginButton:focus {
-    border: 2px solid #cba6f7;
+QPushButton:focus {
+    border: 2px solid cornflowerblue;
 }
 
-/* --- PASSWORD FIELD --- */
+QToolButton:focus {
+    border: 2px solid cornflowerblue;
+}
+
+QToolButton:hover {
+    background-color: rgba(255, 255, 255, 30);
+}
+
+QToolButton:pressed {
+    background-color: rgba(255, 255, 255, 10);
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+#LoginButton {
+    border: 1px solid gray;
+    border-radius: 18px;
+}
+
+#LoginButton:focus {
+    border: 1px solid cornflowerblue;
+    border-radius: 18px;
+}
+
+#UserLabel, #SessionLabel {
+    border: 1px solid gray;
+    border-radius: 18px;
+}
+
+#UserNavRight, #UserNavLeft {
+    border: 1px solid gray;
+    border-radius: 18px;
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+#BackButton {
+    border: 1px solid gray;
+    border-radius: 18px;
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+#SessionNavRight, #SessionNavLeft {
+    border: 1px solid gray;
+    border-radius: 18px;
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+#UserNavRight:focus, #UserNavLeft:focus {
+    border: 1px solid cornflowerblue;
+}
+
+#SessionNavRight:focus, #SessionNavLeft:focus {
+    border: 1px solid cornflowerblue;
+}
+
+QToolButton#Halt {
+    border: 1px solid gray;
+    border-radius: 0px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+QToolButton#Reboot {
+    border: 1px solid gray;
+    border-radius: 0px;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
 QLineEdit {
-    background-color: rgba(24, 24, 37, 0.9);
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 18px;
     padding-left: 10px;
     padding-right: 10px;
-    selection-background-color: #cba6f7;
-    selection-color: #1e1e2e;
 }
 
-/* --- LOGIN BUTTON --- */
-#LoginButton {
-    qproperty-iconSize: 0px;
-    qproperty-text: "Login";
-    background-color: rgba(49, 50, 68, 1.0);
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
+QLineEdit:focus {
+    border: 2px solid cornflowerblue;
 }
 
-/* --- USER & SESSION LABELS --- */
-#UserLabel, #SessionLabel {
-    background-color: rgba(30, 30, 46, 0.6);
-    border: none; 
+QLineEdit:edit-focus {
+    border: 2px solid cornflowerblue;
 }
 
-/* --- NAVIGATION ARROWS --- */
-#UserNavRight, #UserNavLeft, #SessionNavRight, #SessionNavLeft {
-    background-color: transparent; 
+QListWidget {
+    background-color: transparent;
     border: none;
 }
 
-/* --- USER AVATAR --- */
-QLabel#UserIcon {
-    border: 2px solid #cba6f7;
-    border-radius: 36px;
-    padding: 0px;
-    margin: 0px;
+QWidget#widget {
+    border: 2px solid gray;
+    border-radius: 5px;
 }
 
-/* --- POPUP/OVERLAY --- */
-QWidget#widget {
-    background-color: rgba(30, 30, 46, 0.95);
-    border: 2px solid #cba6f7;
-    border-radius: 12px;
+QWidget#OverLay {
+    background-color: rgba(0, 0, 0, 230);
+}
+
+QLabel#UserIcon {
+    border: 2px solid gray;
+    border-radius: 6px;
+}
+
+QMessageBox {
+    background-color: rgba(0, 0, 0, 230);
+    border: 2px solid gray;
+    border-radius: 5px;
 }

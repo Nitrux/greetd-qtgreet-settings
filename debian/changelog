@@ -1,3 +1,9 @@
+greetd-qtgreet-settings (0.1.7)  nitrux; urgency=medium
+
+  * Revert to default style and layout.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 21 Jan 2026 18:38:00 -0500
+
 greetd-qtgreet-settings (0.1.6)  nitrux; urgency=medium
 
   * Match appearance to Waybar's default.
